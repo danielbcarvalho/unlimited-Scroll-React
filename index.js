@@ -10,9 +10,13 @@ require("./mongoose"); // roda mongoose.js e conecta ao db
 
 const express = require("express");
 
+const cors = require("cors");
+
 const Scroll = require("./Scroll");
 
 const app = express();
+
+app.use(cors());
 
 //Route to seed db with
 app.post("/seed", async (req, res) => {
@@ -69,4 +73,4 @@ app.get("/scroll", async (req, res) => {
   }
 });
 
-app.listen(3000, () => console.log("The server has started"));
+app.listen(3333, () => console.log("The server has started"));
